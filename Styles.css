@@ -13,4 +13,18 @@
       linear-gradient(60deg, rgb(40, 16, 102), rgb(120 086 255));
     background-blend-mode: overlay, overlay, difference, difference, difference, normal;
   }
+  /* Estilo para el encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Estilo para el logo */
+  .logo img {
+    max-height: 50px;
+  }
   
