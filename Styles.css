@@ -17,7 +17,6 @@
   header {
 	width:100%; /* Establecemos que el header abarque el 100% del documento */
 	overflow:hidden; /* Eliminamos errores de float */
-	background:#252932;
 	margin-bottom:20px;
 }
 
@@ -53,10 +52,6 @@ header nav a {
 	transition:all 500ms ease;
 }
 
-header nav a:hover {
-	background:#f56f3a;
-	border-radius:50px;
-}
 
 @media screen and (max-width: 950px) {
 	header .logo,
