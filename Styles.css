@@ -15,58 +15,143 @@
   }
   /* Estilo para el encabezado */
   header {
-	width:100%; /* Establecemos que el header abarque el 100% del documento */
-	overflow:hidden; /* Eliminamos errores de float */
-	margin-bottom:20px;
-}
-
-.wrapper {
-	width:100%; /* Establecemos que el ancho sera del 90% */
-	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
-	margin:auto; /* Centramos los elementos */
-	overflow:hidden; /* Eliminamos errores de float */
-}
-
-header .logo {
-	color:#ffffff;
-	font-size:50px;
-	line-height:200px;
-	float:left;
-}
-
-header nav {
-	float:right;
-	line-height:200px;
-}
-
-header nav a {
-	display:inline-block;
-	color:#ffffff;
-	text-decoration:none;
-	padding:10px 20px;
-	line-height:normal;
-	font-size:20px;
-	font-weight:medium;
-	-webkit-transition:all 500ms ease;
-	-o-transition:all 500ms ease;
-	transition:all 500ms ease;
-}
-
-
-@media screen and (max-width: 950px) {
-	header .logo,
-	header nav {
-		width:100%;
-		text-align:center; /*Centramos el menu y el logotipo*/
-		line-height:100px;
-	}
-
-	.header2 {
-		height:auto;
-	}
-
-	.header2 .logo,
-	.header2 nav {
-		line-height:50px;
-	}
-}
+    height: 60px;
+    position: relative;
+    width: 100%;
+  }
+  
+  // El logo sera flotado a la izquierda
+  #logo {
+    float: left;
+    padding: 6px 20px;
+    width: auto;
+    height: 60px;
+  
+    a {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      line-height: 44px;
+      text-transform: uppercase;
+    }
+  }
+  
+  // Fijamos nuestro nav en 100% ancho
+  #menu {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  
+    // Quitamos estilos por defecto de el tag UL
+    ul {
+      max-height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+  
+    // Convertimos nuestra lista de enlaces en un menú horizontal
+    li {
+      display: block;
+      background: #33363b;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 1px solid #282b30;
+  
+      // Damos estilo a nuestros enlaces
+      a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 26px;
+  
+        &:active,
+        &:focus   
+      }
+    }
+  
+    // Agregamos una animación al despliegue del menú
+    .open-menu {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.236);
+      max-height: 400px;
+      transition: max-height .4s ease;
+    }
+  }
+  
+  // Botón mostrar menú
+  #nav-mobile {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    float: right;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: -60px;
+    opacity: 0.6;
+  
+    // Agregaremos esta clase a #nav-mobile, cuando el menu mobile haya sido desplegado
+    &.nav-open {
+      opacity: 1;
+    }
+  
+    span {
+      display: block;
+      width: 60%;
+      margin: 4px auto;
+      height: 4px;
+      background: #fff
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    // ocultamos botón #nav-mobile
+    #nav-mobile{ display: none; }
+  
+    // Nuestro nav con id #menu lo flotaremos a la derecha
+    #menu {
+      width: auto;
+      float: right;
+      top: 0;
+      position: relative;
+  
+      .open-menu {
+        box-shadow: none;
+      }
+  
+      // Hacemos reset de max-height
+      ul {
+        max-height: inherit;
+      }
+  
+      // Alineamos los items de forma horizontal
+      li {
+        float: left;
+        border: 0;
+        background: transparent;
+  
+        a {
+          display: block;
+          color: #fff;
+          padding: 0 26px;
+  
+          &:hover {
+            color: #ffc700;
+            background: #151a1e;
+          }
+        }
+      }
+    }
+  }
+  
+  
+ 
+  
+  
+  
