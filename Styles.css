@@ -21,14 +21,14 @@
 }
 
 .wrapper {
-	width:90%; /* Establecemos que el ancho sera del 90% */
+	width:100%; /* Establecemos que el ancho sera del 90% */
 	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
 	margin:auto; /* Centramos los elementos */
 	overflow:hidden; /* Eliminamos errores de float */
 }
 
 header .logo {
-	color:#f2f2f2;
+	color:#ffffff;
 	font-size:50px;
 	line-height:200px;
 	float:left;
@@ -41,12 +41,12 @@ header nav {
 
 header nav a {
 	display:inline-block;
-	color:#fff;
+	color:#ffffff;
 	text-decoration:none;
 	padding:10px 20px;
 	line-height:normal;
 	font-size:20px;
-	font-weight:bold;
+	font-weight:medium;
 	-webkit-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
 	transition:all 500ms ease;
