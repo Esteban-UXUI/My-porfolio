@@ -26,11 +26,9 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    min-height: 8vh;
+    height: 70px;
     background-color: #0000002e;
     position: fixed;
-    font-family: 'poppins', sans-serif;
-    
   }
   
   .logo {
@@ -68,9 +66,9 @@
   .burger div {
     width: 25px;
     height: 3px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(238, 235, 235);
     margin: 5px;
-    transition: all 0.3s ease ease-in-out;
+    transition: all 0.3s ease;
   }
   
   @media screen and (max-width: 1024px) {
@@ -88,7 +86,7 @@
       right: 0px;
       height: 100VH;
       width: 100vh;
-      top: 8vh;
+      top: 56px;
       background-color: #000000;
       display: relative;
       flex-direction: column;
