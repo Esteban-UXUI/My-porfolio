@@ -1,5 +1,6 @@
 
   body{
+    font-family: 'poppins', sans-serif;
     height:100vh;
     margin: 0;
     --x: calc(var(--posX, 0) * 1px);
@@ -13,145 +14,61 @@
       linear-gradient(60deg, rgb(40, 16, 102), rgb(120 086 255));
     background-blend-mode: overlay, overlay, difference, difference, difference, normal;
   }
-  /* Estilo para el encabezado */
-  header {
-    height: 60px;
-    position: relative;
-    width: 100%;
-  }
-  
-  // El logo sera flotado a la izquierda
-  #logo {
-    float: left;
-    padding: 6px 20px;
-    width: auto;
-    height: 60px;
-  
-    a {
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      color: #fff;
-      font-weight: bold;
-      line-height: 44px;
-      text-transform: uppercase;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 3%;
+    color: #ffffff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: THIN;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    font-size: 24px;
+}
+
+.nav-links a {
+    color: #ffffff94;
+    text-decoration: none;
+    transition: color 0.3s;
+    
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
-  }
-  
-  // Fijamos nuestro nav en 100% ancho
-  #menu {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-  
-    // Quitamos estilos por defecto de el tag UL
-    ul {
-      max-height: 0;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 14px;
-    }
-  
-    // Convertimos nuestra lista de enlaces en un menú horizontal
-    li {
-      display: block;
-      background: #33363b;
-      text-transform: uppercase;
-      text-align: center;
-      border-bottom: 1px solid #282b30;
-  
-      // Damos estilo a nuestros enlaces
-      a {
+
+    .menu-toggle {
         display: block;
-        color: #fff;
-        text-decoration: none;
-        line-height: 60px;
-        padding: 0 26px;
-  
-        &:active,
-        &:focus   
-      }
+        cursor: pointer;
+        font-size: 24px;
     }
-  
-    // Agregamos una animación al despliegue del menú
-    .open-menu {
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.236);
-      max-height: 400px;
-      transition: max-height .4s ease;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle.active + .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
     }
-  }
-  
-  // Botón mostrar menú
-  #nav-mobile {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    float: right;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: 0;
-    top: -60px;
-    opacity: 0.6;
-  
-    // Agregaremos esta clase a #nav-mobile, cuando el menu mobile haya sido desplegado
-    &.nav-open {
-      opacity: 1;
-    }
-  
-    span {
-      display: block;
-      width: 60%;
-      margin: 4px auto;
-      height: 4px;
-      background: #fff
-    }
-  }
-  
-  @media only screen and (min-width: 768px) {
-    // ocultamos botón #nav-mobile
-    #nav-mobile{ display: none; }
-  
-    // Nuestro nav con id #menu lo flotaremos a la derecha
-    #menu {
-      width: auto;
-      float: right;
-      top: 0;
-      position: relative;
-  
-      .open-menu {
-        box-shadow: none;
-      }
-  
-      // Hacemos reset de max-height
-      ul {
-        max-height: inherit;
-      }
-  
-      // Alineamos los items de forma horizontal
-      li {
-        float: left;
-        border: 0;
-        background: transparent;
-  
-        a {
-          display: block;
-          color: #fff;
-          padding: 0 26px;
-  
-          &:hover {
-            color: #ffc700;
-            background: #151a1e;
-          }
-        }
-      }
-    }
-  }
-  
-  
- 
-  
-  
-  
+}
