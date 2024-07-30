@@ -1,4 +1,7 @@
-
+html {
+  scroll-behavior: smooth;
+}
+  
   body{
     font-family: 'poppins', sans-serif;
     height:100vh;
@@ -32,7 +35,7 @@
   }
   
   .logo {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.834);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
@@ -54,7 +57,7 @@
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: thin;
-    font-size: 20px;
+    font-size: 16px;
     backdrop-filter: 200px;
   }
   
@@ -84,9 +87,9 @@
     .nav-links {
       position: absolute;
       right: 0px;
-      height: 100VH;
+      height: 110vh;
       width: 100vh;
-      top: 56px;
+      top: 0px;
       background-color: #000000;
       display: relative;
       flex-direction: column;
@@ -130,6 +133,7 @@
     transform: rotate(45deg) translate(-5px, -6px);
   }
 
+
 .personal-info {
     display: flex ;
     flex-direction: column;
@@ -155,3 +159,96 @@
     font-weight: 100;
 }
 
+  /* Aquí va la sección 2**/
+
+  #seccion2 {
+    display: flex;
+    flex-direction: column; /* Por defecto, los elementos se apilan verticalmente */
+    height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-type: y mandatory;
+}
+
+.contenedor-info, .contenedor-medios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.contenedor-info {
+    background-color: #f0f0f0;
+    text-align: left; /* Alinea el texto al centro */
+    flex-direction: column; /* Los elementos dentro del contenedor-info se apilan verticalmente */
+    height: 50vh; /* Cada sección ocupa la mitad de la altura de la ventana */
+}
+
+.contenedor-medios {
+    background-color: #333;
+    height: 50vh; /* Cada sección ocupa la mitad de la altura de la ventana */
+}
+
+.contenedor-info h1 {
+    margin: 0 0 10px 0;
+    text-align: left;
+    font-size: 32px;
+}
+
+.contenedor-info p {
+    margin: 32PX;
+    font-size: 16 px;
+    text-align: center;
+    width: 70%;
+}
+
+.cta {
+    text-decoration: none;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 24px 52px;
+    margin: 40px;
+    border-radius: 999px;
+    font-weight: medium;
+    font-size: 52;
+}
+
+
+.media-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.media {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+    #seccion2 {
+        flex-direction: row; /* Cambia a fila en pantallas grandes */
+    }
+
+    .contenedor-info, .contenedor-medios {
+        height: 100vh;
+        width: 50%; /* Cada contenedor ocupa la mitad del ancho de la ventana */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas grandes */
+    }
+
+    .contenedor-info {
+        padding: 40px; /* Aumenta el padding para pantallas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-info, .contenedor-medios {
+        height: 0vh;
+    }
+}

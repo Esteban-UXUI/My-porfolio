@@ -1,5 +1,5 @@
 
-  document.body.addEventListener("pointermove", (e)=>{
+document.body.addEventListener("pointermove", (e)=>{
     const { currentTarget: el, clientX: x, clientY: y } = e;
     const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
     el.style.setProperty('--posX',  x-l-w/2);
@@ -34,11 +34,16 @@
       
       app();
 
+      document.addEventListener('scroll', () => {
+        const media = document.querySelector('.media');
+        const scrollY = window.scrollY;
+    
+        // Aplica una transformación basada en el scroll
+        media.style.transform = `translateY(${scrollY * 0.5}px)`;
+    });
+
   })
-
   
-
-
 
 
   
