@@ -148,7 +148,7 @@ html {
 
 .personal-info h1 {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 500;
     margin: 20px 0;
     padding-bottom: 35PX;
 }
@@ -164,7 +164,7 @@ html {
   #seccion2 {
     display: flex;
     flex-direction: column; /* Por defecto, los elementos se apilan verticalmente */
-    height: 200vh;
+    height: auto;
     overflow: hidden;
     scroll-snap-align: start;
     scroll-snap-type: y mandatory;
