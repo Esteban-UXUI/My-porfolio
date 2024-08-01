@@ -42,6 +42,14 @@ document.body.addEventListener("pointermove", (e)=>{
         media.style.transform = `translateY(${scrollY * 0.5}px)`;
     });
 
+    document.getElementById('boton-flotante').addEventListener('click', function() {
+  document.getElementById('segunda-seccion').scrollIntoView({
+    behavior: 'smooth'
+  });
+});
+////////////////animación palabras////////////////////////
+
+
   })
   
 
