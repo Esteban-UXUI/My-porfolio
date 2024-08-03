@@ -48,7 +48,6 @@ document.body.addEventListener("pointermove", (e)=>{
   });
 });
 ////////////////animación palabras////////////////////////
-
 const contenedor = document.getElementById('contenedor-medios');
 const palabras = [
   'Product design',
@@ -77,7 +76,7 @@ function crearPalabra() {
   palabra.style.fontSize = `${Math.random() * 50 + 10}px`; // Entre 10 y 30px
 
   // Familia de fuente aleatoria (puedes agregar más opciones)
-  const fuentes = ['Arial', 'Helvetica', 'Times New Roman', 'sans-serif', 'serif',`poppins`,`impact`,`gupter`,`marck script`,`nanum pen script`];
+  const fuentes = ['Arial', 'Helvetica', 'Times New Roman', 'sans-serif', 'serif',`impact`,`script`];
   palabra.style.fontFamily = fuentes[Math.floor(Math.random() * fuentes.length)];
 
   // Posición aleatoria
@@ -92,8 +91,8 @@ function crearPalabra() {
     palabra.style.opacity = 0;
     setTimeout(() => {
       contenedor.removeChild(palabra);
-    }, 500);
-  }, 500);
+    }, 5000);
+  }, 2000);
 }
 
 // Limitar a 5 palabras en pantalla
@@ -104,12 +103,13 @@ function crearPalabraSiHayLugar() {
     palabrasEnPantalla++;
     setTimeout(() => {
       palabrasEnPantalla--;
-    }, 50);
+    }, 8);
   }
 }
 
 // Crear palabras continuamente con el límite
-setInterval(crearPalabraSiHayLugar, 5000);
+setInterval(crearPalabraSiHayLugar, 500);
+
 
 
 
