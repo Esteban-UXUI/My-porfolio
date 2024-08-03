@@ -91,14 +91,14 @@ function crearPalabra() {
     palabra.style.opacity = 0;
     setTimeout(() => {
       contenedor.removeChild(palabra);
-    }, 5000);
-  }, 2000);
+    }, 2000);
+  }, 200);
 }
 
 // Limitar a 5 palabras en pantalla
 let palabrasEnPantalla = 0;
 function crearPalabraSiHayLugar() {
-  if (palabrasEnPantalla < 5) {
+  if (palabrasEnPantalla < 10) {
     crearPalabra();
     palabrasEnPantalla++;
     setTimeout(() => {
