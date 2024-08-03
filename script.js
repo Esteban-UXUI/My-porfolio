@@ -49,6 +49,69 @@ document.body.addEventListener("pointermove", (e)=>{
 });
 ////////////////animación palabras////////////////////////
 
+const contenedor = document.getElementById('contenedor-medios');
+const palabras = [
+  'Product design',
+  'CRO',
+  'Design management',
+  'Strategist',
+  'Wireframes',
+  'UXUI Design',
+  'Design system',
+  'Research',
+  'Accessibility',
+  'Interactive design',
+  'Information architecture',
+  'Design thinking',
+  'Scrum',
+  'Content',
+  'Artificial intelligence'
+];
+
+function crearPalabra() {
+  const palabra = document.createElement('div');
+  palabra.classList.add('palabra');
+  palabra.textContent = palabras[Math.floor(Math.random() * palabras.length)];
+
+  // Tamaño de fuente aleatorio
+  palabra.style.fontSize = `${Math.random() * 50 + 10}px`; // Entre 10 y 30px
+
+  // Familia de fuente aleatoria (puedes agregar más opciones)
+  const fuentes = ['Arial', 'Helvetica', 'Times New Roman', 'sans-serif', 'serif',`poppins`,`impact`,`gupter`,`marck script`,`nanum pen script`];
+  palabra.style.fontFamily = fuentes[Math.floor(Math.random() * fuentes.length)];
+
+  // Posición aleatoria
+  palabra.style.left = `${Math.random() * 100}%`;
+  palabra.style.top = `${Math.random() * 100}%`;
+
+  contenedor.appendChild(palabra);
+
+  // Mostrar y ocultar con animación
+  palabra.style.opacity = 1;
+  setTimeout(() => {
+    palabra.style.opacity = 0;
+    setTimeout(() => {
+      contenedor.removeChild(palabra);
+    }, 500);
+  }, 500);
+}
+
+// Limitar a 5 palabras en pantalla
+let palabrasEnPantalla = 0;
+function crearPalabraSiHayLugar() {
+  if (palabrasEnPantalla < 5) {
+    crearPalabra();
+    palabrasEnPantalla++;
+    setTimeout(() => {
+      palabrasEnPantalla--;
+    }, 50);
+  }
+}
+
+// Crear palabras continuamente con el límite
+setInterval(crearPalabraSiHayLugar, 5000);
+
+
 
   })
   
