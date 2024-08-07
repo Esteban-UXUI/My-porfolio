@@ -86,6 +86,7 @@ const zoomData = [
   {scale: 2, origin: [0.8, 0.4]}
 ];
 
+<<<<<<< HEAD
 // now loop through each section and create the ScrollTrigger accordingly.
 // when that section enters from either direction, it'll fire off the zoom animation.
 gsap.utils.toArray("section").forEach((section, index) => {
@@ -106,6 +107,50 @@ gsap.utils.toArray("section").forEach((section, index) => {
     }
   });
 });
+=======
+function crearPalabra() {
+  const palabra = document.createElement('div');
+  palabra.classList.add('palabra');
+  palabra.textContent = palabras[Math.floor(Math.random() * palabras.length)];
+
+  // Tamaño de fuente aleatorio
+  palabra.style.fontSize = `${Math.random() * 50 + 10}px`; // Entre 10 y 30px
+
+  // Familia de fuente aleatoria (puedes agregar más opciones)
+  const fuentes = ['Arial', 'Helvetica', 'Times New Roman', 'sans-serif', 'serif',`impact`,`script`];
+  palabra.style.fontFamily = fuentes[Math.floor(Math.random() * fuentes.length)];
+
+  // Posición aleatoria
+  palabra.style.left = `${Math.random() * 100}%`;
+  palabra.style.top = `${Math.random() * 100}%`;
+
+  contenedor.appendChild(palabra);
+
+  // Mostrar y ocultar con animación
+  palabra.style.opacity = 1;
+  setTimeout(() => {
+    palabra.style.opacity = 0;
+    setTimeout(() => {
+      contenedor.removeChild(palabra);
+    }, 5000);
+  }, 2000);
+}
+
+// Limitar a 5 palabras en pantalla
+let palabrasEnPantalla = 0;
+function crearPalabraSiHayLugar() {
+  if (palabrasEnPantalla < 5) {
+    crearPalabra();
+    palabrasEnPantalla++;
+    setTimeout(() => {
+      palabrasEnPantalla--;
+    }, 8);
+  }
+}
+
+// Crear palabras continuamente con el límite
+setInterval(crearPalabraSiHayLugar, 500);
+>>>>>>> parent of a7d8f96 (Ajuste name imagen)
 
 
 
