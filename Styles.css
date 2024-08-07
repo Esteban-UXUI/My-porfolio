@@ -76,7 +76,7 @@ html {
   
   @media screen and (max-width: 1024px) {
     .nav-links {
-      width: 90%;
+      width: 70%;
     }
   }
   
@@ -146,11 +146,12 @@ html {
 }
 
 .personal-info h1 {
-    font-size: 30rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin: 0px 0;
+    margin: 20px 0;
+    padding-bottom: 35PX;
     text-align: left;
-    margin-top: 10VH;
+    margin-top: 30VH;
 }
 
 .personal-info p {
@@ -161,14 +162,14 @@ html {
 
 #boton-flotante {
   position: absolute; /* Posicionamiento relativo a la sección */
-  bottom: 1rem; /* 20px de distancia desde la parte inferior de la sección */
+  bottom: 4rem; /* 20px de distancia desde la parte inferior de la sección */
   transform: translateX(-50%);
   background-color: #c1c1c12b;
   border: #fff; 
   height: 52px;
   width: 52px;
   border-radius: 50%;
-  padding: 4px;
+  padding: 15px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
@@ -198,41 +199,178 @@ html {
 }
 
 
-  /* Aquí va la sección 2----------------------------------------------------------------------------------------------------------- 2**/
+  /* Aquí va la sección----------------------------------------------------------------------------------------------------------- 2**/
 
-  section {
-    position: absolute;
-    height: 100vh;
-    border-bottom: 1px solid #636363;
-    width: 58%;
-    background-color: #f0f0f0; /* Color de fondo de la sección */
-    padding: 20px; /* Espacio interno de la sección */
-    margin: 40px auto; /* Margen superior e inferior de 40px, centrado */
-    width: 80%; /* Ancho máximo de la sección */
-  }
-  }
-  h1 {
-    position: absolute;
-    top: 30px;
-    font-size: 36px;
-    line-height: 1;
-    font-family: sans-serif;
-    color: #fff;
-    margin: 0 0 0 20px;
-  }
-  .right-side {
-    width: 40%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background: #333;
-    height: 100vh;
+  #seccion2 {
+    display: flex;
+    flex-direction: column; /* Por defecto, los elementos se apilan verticalmente */
+    height: auto;
     overflow: hidden;
-  }
-  .photo {
-    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-type: y mandatory;
+}
+
+.contenedor-info, .contenedor-medios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.contenedor-info {
+    background-color: #f0f0f0;
+    text-align: center; /* Alinea el texto al centro */
+    flex-direction: column; /* Los elementos dentro del contenedor-info se apilan verticalmente */
+    height: 100vh; /* Cada sección ocupa la mitad de la altura de la ventana */
+}
+
+.contenedor-medios {
+    background-color: #333;
+    height: 100vh; /* Cada sección ocupa la mitad de la altura de la ventana */
+}
+
+.contenedor-info h1 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 32px;
+}
+
+.contenedor-info p {
+  text-align: left;
+  
+}
+
+button {
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	background: white;
+	border: 2px solid black;
+	box-shadow: 5px 5px 0 black,
+		-5px -5px 0 black,
+		-5px 5px 0 black,
+		5px -5px 0 black;
+	transition: 500ms ease-in-out;
+  margin-top: 4rem;
+}
+
+button:hover {
+	box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+}
+
+button:focus {
+	outline: none;
+}
+
+.contenedor-info p {
+    margin: 32PX;
+    font-size: 16 px;
+    text-align: center;
+    width: 70%;
+}
+
+
+.media-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    background-image: url(https://www.voicesofyouth.org/sites/voy/files/images/2020-08/finding-sunshine.jpg);
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+    
+}
+
+.contenedor-medios {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+#contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f2f2f2;
+  font-size: 18px;
+  text-align: center;
+}
+
+.palabra {
+  position: absolute;
+  font-family: Gotham, sans-serif;
+  font-size: 24px;
+  color: #808080;
+  cursor: pointer;
+
+}
+
+
+
+.imagen-perfil {
+  position: absolute;
+  bottom: 0px; /* Ajusta el valor para la distancia del borde inferior */
+  right: auto; /* Ajusta el valor para la distancia del borde derecho */
+  left: auto;
+  width: auto; /* Ajusta el ancho de la imagen */
+  height: 100%; /* Ajusta la altura de la imagen */
+}
+
+
+
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+    #seccion2 {
+        flex-direction: row; /* Cambia a fila en pantallas grandes */
+    }
+
+    .contenedor-info, .contenedor-medios {
+        height: 100vh;
+        width: 50%; /* Cada contenedor ocupa la mitad del ancho de la ventana */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas grandes */
+    }
+
+    .contenedor-info {
+        padding: 20px; /* Aumenta el padding para pantallas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-info, .contenedor-medios {
+        height: 100vh;
+    }
+}
+/*aquí empieza la secció N 3********************************************************************/
+#seccion3 {
+  
+  .section {
+    font-size: 5rem;
   }
+  .section--large {
+    width: 100vw;
+    background-color: #8d3dae;
+    color: white;
+  }
+  .section--small {
+    width: 46rem;
+  }
+  .section--dark {
+    color: white;
+    background-color: black;
+  }
+  
+  section {
+    font-weight: 900;
+    transition: color 0.3s;
+  }
+  
+
+ 
+}
