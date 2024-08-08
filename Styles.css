@@ -19,6 +19,13 @@ section {
 
 /* ---- particles.js container ---- */
 
+canvas {
+  display: block;
+  
+}
+
+/* ---- particles.js container ---- */
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -33,7 +40,7 @@ section {
 
 
 .js-count-particles{
-  font-size: 2.1em;
+  font-size: 4.1em;
 }
 
 #stats{
@@ -42,9 +49,8 @@ section {
 }
 
 .count-particles{
-  border-radius: 0 0 3px 3px;
+  border-radius: 4px 0 3px 3px;
 }
-
 
 
 
