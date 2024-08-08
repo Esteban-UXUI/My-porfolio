@@ -26,6 +26,7 @@ canvas {
 
 /* ---- particles.js container ---- */
 
+<<<<<<< HEAD
 #particles-js {
   position: absolute;
   width: 100%;
@@ -50,6 +51,31 @@ canvas {
 
 .count-particles{
   border-radius: 4px 0 3px 3px;
+=======
+button:hover {
+	box-shadow: 20px 5px 0 black, -20px -5px 0 black;
+}
+
+button:focus {
+	outline: none;
+}
+
+.contenedor-info p {
+    margin: 32PX;
+    font-size: 16 px;
+    text-align: center;
+    width: 70%;
+}
+
+
+.media-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    
+>>>>>>> parent of 7fc119a (descripción de mi perfil)
 }
 
 
