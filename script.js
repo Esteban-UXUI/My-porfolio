@@ -1,10 +1,12 @@
+/* ---- particles.js config ---- */
+
 particlesJS("particles-js", {
   "particles": {
     "number": {
       "value": 280,
       "density": {
         "enable": true,
-        "value_area": 2000
+        "value_area": 3000
       }
     },
     "color": {
@@ -17,7 +19,7 @@ particlesJS("particles-js", {
         "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 8
       },
       "image": {
         "src": "img/github.svg",
@@ -36,11 +38,11 @@ particlesJS("particles-js", {
       }
     },
     "size": {
-      "value": 3,
+      "value": 2,
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 10,
+        "speed": 2,
         "size_min": 0.1,
         "sync": false
       }
@@ -82,7 +84,7 @@ particlesJS("particles-js", {
     },
     "modes": {
       "grab": {
-        "distance": 140,
+        "distance": 240,
         "line_linked": {
           "opacity": 1
         }
@@ -108,24 +110,3 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
-
-
-/* ---- stats.js config ---- */
-
-var count_particles, stats, update;
-stats = new Stats;
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
