@@ -1,5 +1,39 @@
-.titulo {
-  position: relative;
-  left: -100%; /* Inicialmente fuera de la pantalla */
-  opacity: 0;
-} 
+body {
+
+  margin: 0px;
+  background-color: black;
+}
+
+section {
+  height: 100vh; /* 100% de la altura de la viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bienvenida {
+  
+  background: linear-gradient(to bottom right, #f2f2f2, #e0e0e0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* ... otros estilos ... */
+
+}
+p{
+  justify-content: center;
+  text-align: center;
+}
+
+.trabajo {
+  background-color: #e0e0e0;
+}
+
+.yo {
+  background-color: #d3d3d3;
+}
+
+footer {
+  background-color: #ccc;
+}
