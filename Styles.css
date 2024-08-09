@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui;
+}
 body {
 
   margin: 0px;
@@ -11,6 +15,9 @@ section {
   align-items: center;
 }
 
+
+
+
 .bienvenida {
   
   background: linear-gradient(to bottom right, #f2f2f2, #e0e0e0);
@@ -18,12 +25,21 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  
   /* ... otros estilos ... */
 
+}
+.wave-text {
+  font-size: 3rem;
+  position: relative;
+  cursor: pointer;
 }
 p{
   justify-content: center;
   text-align: center;
+  font-size: 1.2rem;
+  margin:  4%;
 }
 
 .trabajo {
