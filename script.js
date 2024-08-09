@@ -33,9 +33,7 @@ function scramble() {
   duration: 1,
   ease: 'elastic.out(1, 0.3)'
 });
-  });
-}
-
+ 
 scrambleText.addEventListener('mouseenter', scramble);
 scrambleText.addEventListener('click', scramble);
 
